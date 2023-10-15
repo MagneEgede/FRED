@@ -35,7 +35,7 @@ if user_menu == 'FQ Performance - Farm Overview':
 
 
         def partial_cum_returns(start, cum_returns):
-            return cum_returns.loc[start:].div(cum_returns.loc[start])
+            return 0.69*cum_returns.loc[start:].div(cum_returns.loc[start])
 
 
         index = pd.DatetimeIndex(pd.date_range('20230707', '20250707', freq='W'))
@@ -46,7 +46,7 @@ if user_menu == 'FQ Performance - Farm Overview':
         df = pd.DataFrame(index=index)
 
         for date in index:
-            df[date] = 0.69*partial_cum_returns(date, cum_returns)
+            df[date] = partial_cum_returns(date, cum_returns)
         fig = df.plot(legend=False, colormap='viridis').figure
         plt.ylabel('Failure Rate Estimations')
         fig.patch.set_facecolor('#5D5DB1')
