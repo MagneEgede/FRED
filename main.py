@@ -49,7 +49,7 @@ if user_menu == 'FQ Performance - Farm Overview':
             df[date] = partial_cum_returns(date, cum_returns)
         fig = df.plot(legend=False, colormap='viridis').figure
         plt.ylabel('Failure Rate Estimations')
-        fig.patch.set_facecolor('#7A63AF')
+        fig.patch.set_facecolor('#5D5DB1')
         st.pyplot(fig)
     with col2:
         st.subheader('Storage Supply')
