@@ -9,11 +9,11 @@ import seaborn as sns
 # add kitten logo
 
 def logo():
-    add_logo(fr"gallery\fred.png", height=300)
+    add_logo(fr"gallery\FredV2.png", height=300)
 
 
 # add sidebar buttons
-logo_url = "gallery/fred.png"
+logo_url = "gallery/FredV2.png"
 st.sidebar.image(logo_url)
 user_menu = st.sidebar.radio("User Menu", (
     'FQ Performance - Farm Overview', 'FQ Performance - Turbine Level', 'Parameter Sharing', 'FRED Partners Overview'))
