@@ -138,7 +138,7 @@ if user_menu == 'Meet FRED':
     st.subheader("Core Company Values")
     st.markdown(
         """
-        FRED is a Pioneering startup leveraging federated learning to proactively prevent frequency converter failures 
+        FRED is a pioneering startup leveraging federated learning to proactively prevent frequency converter failures 
         and optimize industrial offshore operations. The core company values lie in:
         - Put competitive advantage first. Start with a winning, scalable formula.
         - Be a local hero. Commit to winning on the home front.
