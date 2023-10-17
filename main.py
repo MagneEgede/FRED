@@ -82,9 +82,13 @@ if user_menu == 'FQ Performance - Turbine Level':
             coll21.metric("AC/DC Failure Rate", "0.4", "-0.1")
             coll22.metric("DC/AC Failure Rate ", "0.8", "+0.3")
 
-            coll23, col24 = st.columns(2)
+            coll23, coll24 = st.columns(2)
             coll23.metric("AC/DC Variance", "0.2", "-0.2")
             coll24.metric("DC/AC Variance", "1.2", "+0.8")
+
+        st.text('The 2. unit located in the first series of the DC/AC is about break. '
+                'The most likely cause is humitidy.')
+
 
 
 
