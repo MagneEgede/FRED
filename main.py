@@ -34,7 +34,7 @@ if user_menu == 'FQ Performance - Farm Overview':
 
     st.markdown('---')
 
-    fail_value = df[df['WT SITE']==farm1]['Average WT Failure Rate'].values()
+    fail_value = df[df['WT SITE']==farm1]['Average WT Failure Rate'].values
 
     col1, col2 = st.columns(2)
     with col1:
