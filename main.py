@@ -78,13 +78,13 @@ if user_menu == 'FQ Performance - Turbine Level':
         st.markdown("""---""")
 
         if farm and turbine_number:
-            col21, col22 = st.columns(2)
-            col21.metric("AC/DC Failure Rate", "0.4", "-0.1")
-            col22.metric("DC/AC Failure Rate ", "0.8", "+0.3")
+            coll21, coll22 = st.columns(2)
+            coll21.metric("AC/DC Failure Rate", "0.4", "-0.1")
+            coll22.metric("DC/AC Failure Rate ", "0.8", "+0.3")
 
-            col21, col22 = st.columns(2)
-            col21.metric("AC/DC Variance", "0.2", "-0.2")
-            col22.metric("FC Units Required ", "1.2", "+0.8")
+            coll23, col24 = st.columns(2)
+            coll23.metric("AC/DC Variance", "0.2", "-0.2")
+            coll24.metric("DC/AC Variance", "1.2", "+0.8")
 
 
 
