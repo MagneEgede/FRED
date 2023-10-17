@@ -88,12 +88,12 @@ if user_menu == 'FQ Performance - Turbine Level':
 
             st.write('The 2. unit located in the first series of the DC/AC is about to break. '
                     'The most likely cause is humitidy. \n '
-                     'Please input feedback if applicable')
+                     'Please input feedback if applicable.')
 
 
             response = st.text_input('Feedback')
             if response:
-                st.write(fr"Thank you for your feedback on turbine {turbine_number} - {farm}. It is now stored on FRED's server")
+                st.write(fr"Thank you for your feedback on turbine {turbine_number} - {farm}. It is now stored on FRED's server!")
 
 
 
