@@ -30,52 +30,51 @@ if user_menu == 'FQ Performance - Farm Overview':
     st.dataframe(df)
 
     farm1 = st.selectbox("Select Wind Farm", ('WH003', 'WH001', 'SH505', 'KL403'), index=None,
-                        placeholder='WH003')
+                        placeholder="Fred is Awaiting Your Answer")
 
     st.markdown('---')
+    if farm1:
+        fail_value = df[df['WT SITE']==farm1]['Average WT Failure Rate'].values
 
-    fail_value = df[df['WT SITE']==farm1]['Average WT Failure Rate'].values
-    st.write(fail_value)
-
-    col1, col2 = st.columns(2)
-    with col1:
-        st.subheader('FR Estimates')
-        sns.set()
-
-
-        def partial_cum_returns(start, cum_returns, fail_value):
-            return fail_value * cum_returns.loc[start:].div(cum_returns.loc[start])
+        col1, col2 = st.columns(2)
+        with col1:
+            st.subheader('FR Estimates')
+            sns.set()
 
 
-        index = pd.DatetimeIndex(pd.date_range('20230707', '20250707', freq='W'))
-        np.random.seed(5)
+            def partial_cum_returns(start, cum_returns, fail_value):
+                return fail_value * cum_returns.loc[start:].div(cum_returns.loc[start])
 
-        returns = pd.Series(np.exp(np.random.normal(loc=0, scale=0.05, size=len(index))), index=index)
-        cum_returns = returns.cumprod()
-        df = pd.DataFrame(index=index)
 
-        for date in index:
-            df[date] = partial_cum_returns(date, cum_returns, fail_value)
-        fig = df.plot(legend=False, colormap='viridis').figure
-        plt.ylabel('Failure Rate Estimations')
-        fig.patch.set_facecolor('#5D5DB1')
-        st.pyplot(fig)
-    with col2:
-        st.subheader('Storage Supply')
-        col21, col22 = st.columns(2)
-        numberofunits = st.empty()
-        numberofunits = 15
-        col21.metric("FC Units Available", fr"#{numberofunits}", "-#8")
-        col22.metric("FC Units Required ", "#20", "+#12")
-        st.subheader('Maintenance Options')
-        col24, col25 = st.columns(2)
-        with col24:
-            A = st.button('Buy #20 Units')
-            if A:
-                numberofunits = 15 + 20
+            index = pd.DatetimeIndex(pd.date_range('20230707', '20250707', freq='W'))
+            np.random.seed(5)
 
-        with col25:
-            st.button('Vessels Available')
+            returns = pd.Series(np.exp(np.random.normal(loc=0, scale=0.05, size=len(index))), index=index)
+            cum_returns = returns.cumprod()
+            df = pd.DataFrame(index=index)
+
+            for date in index:
+                df[date] = partial_cum_returns(date, cum_returns, fail_value)
+            fig = df.plot(legend=False, colormap='viridis').figure
+            plt.ylabel('Failure Rate Estimations')
+            fig.patch.set_facecolor('#5D5DB1')
+            st.pyplot(fig)
+        with col2:
+            st.subheader('Storage Supply')
+            col21, col22 = st.columns(2)
+            numberofunits = st.empty()
+            numberofunits = 15
+            col21.metric("FC Units Available", fr"#{numberofunits}", "-#8")
+            col22.metric("FC Units Required ", "#20", "+#12")
+            st.subheader('Maintenance Options')
+            col24, col25 = st.columns(2)
+            with col24:
+                A = st.button('Buy #20 Units')
+                if A:
+                    numberofunits = 15 + 20
+
+            with col25:
+                st.button('Vessels Available')
 
 if user_menu == 'FQ Performance - Turbine Level':
     st.title("'Fnattenfall' Turbine Level Results")
