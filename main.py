@@ -30,7 +30,7 @@ if user_menu == 'FQ Performance - Farm Overview':
     st.dataframe(df)
 
     farm1 = st.selectbox("Select Wind Farm", ('WH003', 'WH001', 'SH505', 'KL403'), index=None,
-                        placeholder="Fred is Awaiting Your Answer")
+                        placeholder='WH003')
 
     st.markdown('---')
 
