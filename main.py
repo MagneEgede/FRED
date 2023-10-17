@@ -73,5 +73,18 @@ if user_menu == 'FQ Performance - Turbine Level':
         farm = st.selectbox("Select Wind Farm", ('WH003', 'WH001', 'SH505', 'KL403'), index=None,
                      placeholder="Fred is Awaiting Your Answer")
 
-        turbine_number = st.number_input('Turbine NUmber', min_value=0, max_value=100)
+        turbine_number = st.number_input('Turbine Number', min_value=0, max_value=100)
+
+        st.markdown("""---""")
+
+        if farm and turbine_number:
+            col21, col22 = st.columns(2)
+            col21.metric("AC/DC Failure Rate", "0.4", "-0.1")
+            col22.metric("DC/AC Failure Rate ", "0.8", "+0.3")
+
+            col21, col22 = st.columns(2)
+            col21.metric("AC/DC Variance", "0.2", "-0.2")
+            col22.metric("FC Units Required ", "1.2", "+0.8")
+
+
 
