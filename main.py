@@ -79,9 +79,9 @@ if user_menu == 'FQ Performance - Farm Overview':
 if user_menu == 'FQ Performance - Turbine Level':
     st.title("'Fnattenfall' Turbine Level Results")
     coll1, coll2 = st.columns(2)
-    with coll1:
-        st.image("gallery/wind.webp")
     with coll2:
+        st.image("gallery/wind.webp")
+    with coll1:
         farm = st.selectbox("Select Wind Farm", ('WH003', 'WH001', 'SH505', 'KL403'), index=None,
                      placeholder="Fred is Awaiting Your Answer")
 
