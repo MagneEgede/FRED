@@ -93,7 +93,7 @@ if user_menu == 'FQ Performance - Turbine Level':
 
             response = st.text_input('Feedback')
             if response:
-                st.write('Thank you for your feedback')
+                st.write(fr'Thank you for your feedback on turbine {turbine_number} - {farm}. It is now stored within FRED')
 
 
 
