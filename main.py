@@ -66,5 +66,5 @@ if user_menu == 'FQ Performance - Farm Overview':
 
 if user_menu == 'FQ Performance - Turbine Level':
     st.title("'Fnattenfall' Turbine Level Results")
-    st.image("gallery/wind.jpg")
+    st.image("gallery/wind.webp")
 
