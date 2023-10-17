@@ -108,10 +108,22 @@ if user_menu == 'FQ Performance - Turbine Level':
                 st.write(fr"Thank you for your feedback on turbine {turbine_number} - {farm}. It is now stored on FRED's server!")
 
 
-if user_menu == 'FRED Partners Overview':
-    st.header("View All FRED's Current Clients")
+if user_menu == "Parameter Sharing":
+    st.subheader("Download Latest Set of Parameters Shared")
+    st.download_button(
+        label="Download Encrypted Parameters as Json",
+        data=csv,
+        file_name='large_df.csv',
+        mime='text/csv',
+    )
 
-    st.header("View All FRED's Sponsors")
+    st.subheader("Upload Manual Revisited Parameters")
+    uploaded_file = st.file_uploader("Choose a file")
+
+if user_menu == 'FRED Partners Overview':
+    st.subheader("View All FRED's Current Clients")
+
+    st.subheader("View All FRED's Sponsors")
     collu1, collu2, collu3 = st.columns(3)
 
     with collu1:
