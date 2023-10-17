@@ -15,8 +15,8 @@ def logo():
 # add sidebar buttons
 logo_url = "gallery/FredV2.png"
 st.sidebar.image(logo_url)
-user_menu = st.sidebar.radio("User Menu", (
-    'FQ Performance - Farm Overview', 'FQ Performance - Turbine Level', 'Parameter Sharing', 'FRED Partners Overview'))
+user_menu = st.sidebar.radio("User Menu", ('FQ Performance - Turbine Level',
+    'FQ Performance - Farm Overview', 'Parameter Sharing', 'Meet FRED'))
 
 if user_menu == 'FQ Performance - Farm Overview':
     st.title("'Fnattenfall' Wind Farm Overview")
@@ -133,10 +133,10 @@ if user_menu == "Parameter Sharing":
     st.subheader("Upload Manual Revisited Parameters")
     uploaded_file = st.file_uploader("Choose a file")
 
-if user_menu == 'FRED Partners Overview':
+if user_menu == 'Meet FRED':
     st.subheader("View All FRED's Current Clients")
 
-    st.subheader("View All FRED's Sponsors")
+    st.subheader("View All FRED's Partners")
     collu1, collu2, collu3 = st.columns(3)
 
     with collu1:
