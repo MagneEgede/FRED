@@ -17,6 +17,7 @@ logo_url = "gallery/FredV2.png"
 st.sidebar.image(logo_url)
 user_menu = st.sidebar.radio("User Menu", (
     'FQ Performance - Farm Overview', 'FQ Performance - Turbine Level', 'Parameter Sharing', 'FRED Partners Overview'))
+
 if user_menu == 'FQ Performance - Farm Overview':
     st.title("'Fnattenfall' Wind Farm Overview")
 
@@ -63,5 +64,7 @@ if user_menu == 'FQ Performance - Farm Overview':
         with col25:
             st.button('Vessels Available')
 
-if user_menu == 'Page 2':
-    pass
+if user_menu == 'FQ Performance - Turbine Level':
+    st.title("'Fnattenfall' Turbine Level Results")
+    st.image("gallery/wind.jpg")
+
