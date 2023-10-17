@@ -55,6 +55,7 @@ if user_menu == 'FQ Performance - Farm Overview':
     with col2:
         st.subheader('Storage Supply')
         col21, col22 = st.columns(2)
+        numberofunits = st.empty()
         numberofunits = 15
         col21.metric("FC Units Available", fr"#{numberofunits}", "-#8")
         col22.metric("FC Units Required ", "#20", "+#12")
