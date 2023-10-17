@@ -16,7 +16,7 @@ def logo():
 logo_url = "gallery/FredV2.png"
 st.sidebar.image(logo_url)
 user_menu = st.sidebar.radio("User Menu", ('FQ Performance - Turbine Level',
-    'FQ Performance - Farm Overview', 'Parameter Sharing', 'Meet FRED'))
+                                           'FQ Performance - Farm Overview', 'Parameter Sharing', 'Meet FRED'))
 
 if user_menu == 'FQ Performance - Farm Overview':
     st.title("'Fnattenfall' Wind Farm Overview")
@@ -30,11 +30,11 @@ if user_menu == 'FQ Performance - Farm Overview':
     st.dataframe(df)
 
     farm1 = st.selectbox("Select Wind Farm", ('WH003', 'WH001', 'SH505', 'KL403'), index=None,
-                        placeholder="Fred is Awaiting Your Answer")
+                         placeholder="Fred is Awaiting Your Answer")
 
     st.markdown('---')
     if farm1:
-        fail_value = df[df['WT SITE']==farm1]['Average WT Failure Rate'].values
+        fail_value = df[df['WT SITE'] == farm1]['Average WT Failure Rate'].values
 
         col1, col2 = st.columns(2)
         with col1:
@@ -83,7 +83,7 @@ if user_menu == 'FQ Performance - Turbine Level':
         st.image("gallery/wind.webp")
     with coll1:
         farm = st.selectbox("Select Wind Farm", ('WH003', 'WH001', 'SH505', 'KL403'), index=None,
-                     placeholder="Fred is Awaiting Your Answer")
+                            placeholder="Fred is Awaiting Your Answer")
 
         turbine_number = st.number_input('Turbine Number', min_value=0, max_value=100)
 
@@ -99,14 +99,13 @@ if user_menu == 'FQ Performance - Turbine Level':
             coll24.metric("DC/AC Variance", "1.2", "+0.8")
 
             st.write('The 2. unit located in the first series of the DC/AC is about to break. '
-                    'The most likely cause is humitidy. \n '
+                     'The most likely cause is humitidy. \n '
                      'Please input feedback if applicable.')
-
 
             response = st.text_input('Feedback')
             if response:
-                st.write(fr"Thank you for your feedback on turbine {turbine_number} - {farm}. It is now stored on FRED's server!")
-
+                st.write(
+                    fr"Thank you for your feedback on turbine {turbine_number} - {farm}. It is now stored on FRED's server!")
 
 if user_menu == "Parameter Sharing":
     st.subheader("Summary on the Latest Set of Parameters Shared")
@@ -139,7 +138,8 @@ if user_menu == 'Meet FRED':
     st.subheader("Core Company Values")
     st.markdown(
         """
-        FRED one-liner. The core company values lie in:
+        FRED is a Pioneering startup leveraging federated learning to proactively prevent frequency converter failures 
+        and optimize industrial offshore operations. The core company values lie in:
         - Put competitive advantage first. Start with a winning, scalable formula.
         - Be a local hero. Commit to winning on the home front.
         - Look beyond the core. Nurture growth in adjacent business areas.
@@ -155,5 +155,3 @@ if user_menu == 'Meet FRED':
         st.image(fr'gallery/se.jpg')
     with collu3:
         st.image(fr'gallery/your_logo_here.png')
-
-
