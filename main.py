@@ -109,7 +109,7 @@ if user_menu == 'FQ Performance - Turbine Level':
 
 
 if user_menu == "Parameter Sharing":
-    st.subheader("Latest Set of Parameters Shared")
+    st.subheader("Summary on the Latest Set of Parameters Shared")
     st.code("""{
   "encrypted_data": "8j2N#L!eAtfKmY2Qw8*7Uz1sBpXvIeFg$",
   "cipher": "AES-256",
