@@ -55,12 +55,16 @@ if user_menu == 'FQ Performance - Farm Overview':
     with col2:
         st.subheader('Storage Supply')
         col21, col22 = st.columns(2)
-        col21.metric("FC Units Available", "#15", "-#8")
+        numberofunits = 15
+        col21.metric("FC Units Available", fr"#{numberofunits}", "-#8")
         col22.metric("FC Units Required ", "#20", "+#12")
         st.subheader('Maintenance Options')
         col24, col25 = st.columns(2)
         with col24:
-            st.button('Buy #20 Units')
+            A = st.button('Buy #20 Units')
+            if A:
+                numberofunits = 15 + 20
+
         with col25:
             st.button('Vessels Available')
 
