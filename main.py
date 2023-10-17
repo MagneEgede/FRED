@@ -108,5 +108,17 @@ if user_menu == 'FQ Performance - Turbine Level':
                 st.write(fr"Thank you for your feedback on turbine {turbine_number} - {farm}. It is now stored on FRED's server!")
 
 
+if user_menu == 'FRED Partners Overview':
+    st.header("View All FRED's Current Clients")
+
+    st.header("View All FRED's Sponsors")
+    collu1, collu2, collu3 = st.columns(3)
+
+    with collu1:
+        st.image('graphics/strath.png')
+    with collu2:
+        st.image('graphics/se.jpg')
+    with collu3:
+        st.image('graphics/your_logo_here.png')
 
 
