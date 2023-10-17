@@ -115,10 +115,10 @@ if user_menu == 'FRED Partners Overview':
     collu1, collu2, collu3 = st.columns(3)
 
     with collu1:
-        st.image('graphics/strath.png')
+        st.image(fr'gallery/strath.png')
     with collu2:
-        st.image('graphics/se.jpg')
+        st.image(fr'gallery/se.jpg')
     with collu3:
-        st.image('graphics/your_logo_here.png')
+        st.image(fr'gallery/your_logo_here.png')
 
 
