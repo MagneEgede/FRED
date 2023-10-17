@@ -70,5 +70,8 @@ if user_menu == 'FQ Performance - Turbine Level':
     with coll1:
         st.image("gallery/wind.webp")
     with coll2:
-        st.selectbox("Select Wind Farm", ('WH003', 'WH001', 'SH505', 'KL403'), index=None,
+        farm = st.selectbox("Select Wind Farm", ('WH003', 'WH001', 'SH505', 'KL403'), index=None,
                      placeholder="Fred is Awaiting Your Answer")
+
+        turbine_number = st.number_input('Turbine NUmber', min_value=0, max_value=100)
+
