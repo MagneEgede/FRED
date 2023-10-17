@@ -32,7 +32,7 @@ if user_menu == 'FQ Performance - Farm Overview':
     farm1 = st.selectbox("Select Wind Farm", ('WH003', 'WH001', 'SH505', 'KL403'), index=None,
                         placeholder="Fred is Awaiting Your Answer")
 
-    st.write(data[data['WT SITE']==farm1]['Average WT Failure Rate'])
+    st.write(df[df['WT SITE']==farm1]['Average WT Failure Rate'])
 
     col1, col2 = st.columns(2)
     with col1:
