@@ -134,8 +134,9 @@ if user_menu == "Parameter Sharing":
     uploaded_file = st.file_uploader("Choose a file")
 
 if user_menu == 'Meet FRED':
+    st.image(fr'gallery/pink-logo.png')
+
     st.subheader("Core Company Values")
-    st.image(fr'gallery/pink-logo.png', width=10)
 
     st.subheader("View All FRED's Partners")
     collu1, collu2, collu3 = st.columns(3)
