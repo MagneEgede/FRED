@@ -86,7 +86,7 @@ if user_menu == 'FQ Performance - Turbine Level':
             coll23.metric("AC/DC Variance", "0.2", "-0.2")
             coll24.metric("DC/AC Variance", "1.2", "+0.8")
 
-            st.text('The 2. unit located in the first series of the DC/AC is about break. '
+            st.write('The 2. unit located in the first series of the DC/AC is about break. '
                     'The most likely cause is humitidy.')
 
 
