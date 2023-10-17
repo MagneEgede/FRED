@@ -36,7 +36,7 @@ if user_menu == 'FQ Performance - Farm Overview':
 
 
         def partial_cum_returns(start, cum_returns):
-            return 0.69*cum_returns.loc[start:].div(cum_returns.loc[start])
+            return 0.69 * cum_returns.loc[start:].div(cum_returns.loc[start])
 
 
         index = pd.DatetimeIndex(pd.date_range('20230707', '20250707', freq='W'))
@@ -66,5 +66,9 @@ if user_menu == 'FQ Performance - Farm Overview':
 
 if user_menu == 'FQ Performance - Turbine Level':
     st.title("'Fnattenfall' Turbine Level Results")
-    st.image("gallery/wind.webp")
-
+    coll1, coll2 = st.columns(2)
+    with coll1:
+        st.image("gallery/wind.webp")
+    with coll2:
+        st.selectbox("Select Wind Farm", ('WH003', 'WH001', 'SH505', 'KL403'), index=None,
+                     placeholder="Fred is Awaiting Your Answer")
