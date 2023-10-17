@@ -110,12 +110,25 @@ if user_menu == 'FQ Performance - Turbine Level':
 
 if user_menu == "Parameter Sharing":
     st.subheader("Download Latest Set of Parameters Shared")
-    st.download_button(
-        label="Download Encrypted Parameters as Json",
-        data=csv,
-        file_name='large_df.csv',
-        mime='text/csv',
-    )
+    st.code("""{
+  "encrypted_data": "8j2N#L!eAtfKmY2Qw8*7Uz1sBpXvIeFg$",
+  "cipher": "AES-256",
+  "iv": "oP9aEh7KmL3zQw7s",
+  "key": "a0b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5q6r7",
+  "timestamp": "2023-10-17T12:34:56",
+  "user_id": "123456",
+  "file_name": "document.pdf",
+  "permissions": {
+    "read": true,
+    "write": false,
+    "delete": false
+  },
+  "metadata": {
+    "author": "John Doe",
+    "creation_date": "2023-10-15",
+    "size": "2.5 MB"
+  }
+}""", language='python')
 
     st.subheader("Upload Manual Revisited Parameters")
     uploaded_file = st.file_uploader("Choose a file")
