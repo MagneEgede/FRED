@@ -137,6 +137,14 @@ if user_menu == 'Meet FRED':
     st.image(fr'gallery/pink-logo.png')
 
     st.subheader("Core Company Values")
+    st.markdown(
+        """
+        FRED one-liner. The core company values lie in:
+        - Put competitive advantage first. Start with a winning, scalable formula.
+        - Be a local hero. Commit to winning on the home front.
+        - Look beyond the core. Nurture growth in adjacent business areas.
+        """
+    )
 
     st.subheader("View All FRED's Partners")
     collu1, collu2, collu3 = st.columns(3)
