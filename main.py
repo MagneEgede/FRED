@@ -32,7 +32,9 @@ if user_menu == 'FQ Performance - Farm Overview':
     farm1 = st.selectbox("Select Wind Farm", ('WH003', 'WH001', 'SH505', 'KL403'), index=None,
                         placeholder="Fred is Awaiting Your Answer")
 
-    st.write(df[df['WT SITE']==farm1]['Average WT Failure Rate'])
+    st.markdown('---')
+
+    fail_value = df[df['WT SITE']==farm1]['Average WT Failure Rate']
 
     col1, col2 = st.columns(2)
     with col1:
@@ -40,8 +42,8 @@ if user_menu == 'FQ Performance - Farm Overview':
         sns.set()
 
 
-        def partial_cum_returns(start, cum_returns):
-            return 0.69 * cum_returns.loc[start:].div(cum_returns.loc[start])
+        def partial_cum_returns(start, cum_returns, fail_value):
+            return fail_value * cum_returns.loc[start:].div(cum_returns.loc[start])
 
 
         index = pd.DatetimeIndex(pd.date_range('20230707', '20250707', freq='W'))
@@ -52,7 +54,7 @@ if user_menu == 'FQ Performance - Farm Overview':
         df = pd.DataFrame(index=index)
 
         for date in index:
-            df[date] = partial_cum_returns(date, cum_returns)
+            df[date] = partial_cum_returns(date, cum_returns, fail_value)
         fig = df.plot(legend=False, colormap='viridis').figure
         plt.ylabel('Failure Rate Estimations')
         fig.patch.set_facecolor('#5D5DB1')
