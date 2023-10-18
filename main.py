@@ -130,7 +130,6 @@ if user_menu == "Parameter Sharing":
 }""", language='python')
 
     st.subheader("Upload Manual Revisited Parameters")
-    st.warning('Please verify your homomorphic encryption', icon="⚠️")
     uploaded_file = st.file_uploader("Choose a file")
 
 if user_menu == 'Meet FRED':
